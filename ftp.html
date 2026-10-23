@@ -1,1 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FTP & Media Servers — Jupiter Online Services</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand: #7E2B8C;          
+  --brand-dark: #5E1A69;     
+  --brand-light: #F3E9F5;    
+  --accent: #0097D8;         
+  --accent-dark: #0077A8;    
+  --bg: #F8F9FC;             
+  --text: #1A1228;
+  --muted: #6B5B87;
+  --border: #E8E0F2;
+  --shadow: 0 4px 20px rgba(126, 43, 140, .08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter','Hind Siliguri',sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+a{text-decoration:none;color:inherit}
 
+/* HEADER */
+header{background:#fff;border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(126,43,140,.04);padding:12px 0;}
+.nav{display:flex;align-items:center;justify-content:space-between;max-width:1180px;margin:0 auto;padding:0 20px;}
+.logo img{height:50px;width:auto;}
+.btn-back{background:var(--brand);color:#fff;padding:8px 18px;border-radius:999px;font-weight:700;font-size:14px;transition:0.2s;}
+.btn-back:hover{background:var(--brand-dark);}
+
+/* MAIN CONTENT */
+.container{max-width:1180px;margin:40px auto;padding:0 20px;}
+.page-title{text-align:center;margin-bottom:30px;}
+.page-title h1{font-size:32px;font-weight:900;color:var(--brand);margin-bottom:10px;}
+.page-title p{color:var(--muted);font-size:16px;}
+
+/* SEARCH BAR */
+.search-box{max-width:500px;margin:0 auto 40px;position:relative;}
+.search-box input{
+  width:100%;padding:15px 20px 15px 45px;border:2px solid var(--border);
+  border-radius:999px;font-size:16px;font-family:inherit;outline:none;transition:0.2s;
+}
+.search-box input:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(0,151,216,0.1);}
+.search-icon{position:absolute;left:18px;top:50%;transform:translateY(-50%);font-size:18px;color:var(--muted);}
+
+/* FTP GRID */
+.ftp-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(260px, 1fr));gap:20px;}
+.ftp-card{
+  background:#fff;border-radius:16px;padding:25px 20px;text-align:center;
+  box-shadow:var(--shadow);border:1px solid var(--border);transition:transform 0.2s, box-shadow 0.2s;
+  display:flex;flex-direction:column;justify-content:space-between;align-items:center;
+}
+.ftp-card:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(126,43,140,0.15);}
+.ftp-logo{width:60px;height:60px;border-radius:50%;background:var(--brand-light);color:var(--brand);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px;margin-bottom:15px;flex-shrink:0;}
+.ftp-card h3{font-size:18px;font-weight:800;margin-bottom:5px;}
+.ftp-card p{font-size:13px;color:var(--muted);margin-bottom:15px;}
+.ftp-link{background:var(--accent);color:#fff;padding:8px 20px;border-radius:999px;font-weight:700;font-size:13px;width:100%;transition:0.2s;}
+.ftp-link:hover{background:var(--accent-dark);}
+
+/* FOOTER */
+footer{background:#1A1228;color:#C9BEE0;padding:40px 0 20px;text-align:center;margin-top:60px;font-size:14px;}
+
+@media(max-width:600px){
+  .page-title h1{font-size:26px;}
+  .ftp-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="index.html" class="logo"><img src="logo.png" alt="Jupiter Logo"></a>
+    <a href="index.html" class="btn-back">← Back to Home</a>
+  </div>
+</header>
+
+<div class="container">
+  <div class="page-title">
+    <h1>BD FTP & Media Servers</h1>
+    <p>Browse and search popular local FTP servers in Bangladesh</p>
+  </div>
+
+  <div class="search-box">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="Search FTP, Torrent, or IPTV..." onkeyup="filterFTPs()">
+  </div>
+
+  <div class="ftp-grid" id="ftpGrid">
+    
+    <!-- FTP Servers -->
+    <div class="ftp-card">
+      <div class="ftp-logo">SO</div>
+      <h3>Sam Online FTP</h3>
+      <p>Popular Local FTP</p>
+      <a href="http://172.16.50.4/" target="_blank" class="ftp-link">Open Server</a>
+    </div>
+
+    <div class="ftp-card">
+      <div class="ftp-logo">CF</div>
+      <h3>Circle FTP</h3>
+      <p>Movies & Entertainment</p>
+      <a href="http://circleftp.net/" target="_blank" class="ftp-link">Open Server</a>
+    </div>
+
+    <div class="ftp-card">
+      <div class="ftp-logo">IC</div>
+      <h3>ICC FTP</h3>
+      <p>Local Media Server</p>
+      <a href="http://10.16.100.244/" target="_blank" class="ftp-link">Open Server</a>
+    </div>
+
+    <div class="ftp-card">
+      <div class="ftp-logo">FB</div>
+      <h3>FTP BD</h3>
+      <p>Bangladesh FTP Network</p>
+      <a href="http://ftpbd.net/" target="_blank" class="ftp-link">Open Server</a>
+    </div>
+
+    <div class="ftp-card">
+      <div class="ftp-logo">R</div>
+      <h3>Rangdhonu FTP</h3>
+      <p>Fast Local FTP</p>
+      <a href="http://10.10.10.2/" target="_blank" class="ftp-link">Open Server</a>
+    </div>
+
+    <div class="ftp-card">
+      <div class="ftp-logo">BS</div>
+      <h3>BDSpeed FTP</h3>
+      <p>High Speed Local Hub</p>
+      <a href="http://10.236.236.236/" target="_blank" class="ftp-link">Open Server</a>
+    </div>
+
+    <!-- Torrents -->
+    <div class="ftp-card">
+      <div class="ftp-logo" style="background:#E0F2FE; color:var(--accent);">TB</div>
+      <h3>TorrentBD</h3>
+      <p>Bangladesh's #1 Tracker</p>
+      <a href="https://www.torrentbd.com/" target="_blank" class="ftp-link">Open Site</a>
+    </div>
+
+    <div class="ftp-card">
+      <div class="ftp-logo" style="background:#E0F2FE; color:var(--accent);">CH</div>
+      <h3>CrazyHD</h3>
+      <p>Movies & TV Shows</p>
+      <a href="http://www.chd4.com/" target="_blank" class="ftp-link">Open Site</a>
+    </div>
+
+    <!-- IPTV / Media -->
+    <div class="ftp-card">
+      <div class="ftp-logo" style="background:#FFF3E0; color:#F5A623;">TV</div>
+      <h3>Jupiter TV</h3>
+      <p>Live IPTV Server</p>
+      <a href="http://10.99.99.2/" target="_blank" class="ftp-link">Open Server</a>
+    </div>
+
+    <div class="ftp-card">
+      <div class="ftp-logo" style="background:#FFF3E0; color:#F5A623;">BC</div>
+      <h3>BC IPTV</h3>
+      <p>Live TV Channels</p>
+      <a href="http://bciptv.net/" target="_blank" class="ftp-link">Open Site</a>
+    </div>
+
+    <div class="ftp-card">
+      <div class="ftp-logo" style="background:#FFF3E0; color:#F5A623;">F</div>
+      <h3>FTP Server</h3>
+      <p>General BD FTP</p>
+      <a href="http://45.120.114.222/" target="_blank" class="ftp-link">Open Server</a>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>© <span id="yr"></span> Jupiter Online Services. All rights reserved.</p>
+  <p style="font-size:12px; margin-top:5px; opacity:0.7;">* Note: Some local IP servers (10.x.x.x or 172.x.x.x) require you to be connected to our ISP network.</p>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+function filterFTPs() {
+  var input = document.getElementById('searchInput').value.toLowerCase();
+  var cards = document.getElementsByClassName('ftp-card');
+  
+  for (var i = 0; i < cards.length; i++) {
+    var title = cards[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+    var desc = cards[i].getElementsByTagName('p')[0].innerText.toLowerCase();
+    
+    if (title.includes(input) || desc.includes(input)) {
+      cards[i].style.display = "flex";
+    } else {
+      cards[i].style.display = "none";
+    }
+  }
+}
+</script>
+</body>
+</html>
