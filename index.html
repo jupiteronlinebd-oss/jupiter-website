@@ -172,15 +172,6 @@ header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.98);border
 .referral-form-box{flex:1 1 350px;background:#fff;padding:25px;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow);}
 .referral-form-box input{padding:12px 16px;border:1.5px solid var(--border);border-radius:10px;font-family:inherit;font-size:14px;background:var(--bg);margin-bottom:12px;width:100%;}
 
-/* MEDIA SERVER */
-.media-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
-.media-card{background:#fff;border-radius:16px;padding:20px;text-align:center;box-shadow:var(--shadow);border:1px solid var(--border);transition:transform .2s;}
-.media-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);}
-.media-card .icon{font-size:30px;margin-bottom:10px;}
-.media-card h3{font-size:16px;font-weight:800;margin-bottom:5px;}
-.media-card p{font-size:13px;color:var(--muted);margin-bottom:15px;}
-.media-card .btn-outline{font-size:12px;padding:6px 16px;}
-
 /* FAQ */
 .faq-wrap{max-width:820px;margin:0 auto;}
 .faq-item{background:#fff;border-radius:14px;margin-bottom:12px;border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow);}
@@ -275,7 +266,8 @@ footer a:hover{color:var(--accent)}
 <li><a href="#offers" data-i18n="offers">Offers</a></li>
 <li><a href="#packages" data-i18n="pkgs">Packages</a></li>
 <li><a href="#referral" data-i18n="referralNav">Refer & Earn</a></li>
-<li><a href="#media" data-i18n="media">Media</a></li>
+<!-- লিংকটি ftp.html এ আপডেট করা হয়েছে -->
+<li><a href="ftp.html" data-i18n="media">Media / FTP</a></li>
 <li><a href="#faq" data-i18n="faqNav">FAQ</a></li>
 <li><a href="#contact" data-i18n="contact">Contact</a></li>
 </ul>
@@ -287,7 +279,10 @@ footer a:hover{color:var(--accent)}
 </div>
 </div>
 <div class="mobile-menu" id="mm">
-<a href="#home" data-i18n="home">Home</a><a href="#tools" data-i18n="tools">Self Care</a><a href="#offers" data-i18n="offers">Offers</a><a href="#packages" data-i18n="pkgs">Packages</a><a href="#referral" data-i18n="referralNav">Refer & Earn</a><a href="#media" data-i18n="media">Media</a><a href="#faq" data-i18n="faqNav">FAQ</a><a href="#contact" data-i18n="contact">Contact</a><a href="#cta" data-i18n="get">Get Connection</a>
+<a href="#home" data-i18n="home">Home</a><a href="#tools" data-i18n="tools">Self Care</a><a href="#offers" data-i18n="offers">Offers</a><a href="#packages" data-i18n="pkgs">Packages</a><a href="#referral" data-i18n="referralNav">Refer & Earn</a>
+<!-- মোবাইল মেনুতেও লিংকটি আপডেট করা হয়েছে -->
+<a href="ftp.html" data-i18n="media">Media / FTP</a>
+<a href="#faq" data-i18n="faqNav">FAQ</a><a href="#contact" data-i18n="contact">Contact</a><a href="#cta" data-i18n="get">Get Connection</a>
 </div>
 </header>
 
@@ -527,43 +522,6 @@ footer a:hover{color:var(--accent)}
 </div>
 </section>
 
-<!-- MEDIA SERVER -->
-<section class="section" id="media" style="background:#fff">
-<div class="container">
-<div class="sec-title">
-    <h2 data-i18n="mediaTitle">Media Server / FTP</h2>
-    <p data-i18n="mediaSub">Access our local FTP and entertainment servers.</p>
-    <div class="line"></div>
-</div>
-<div class="media-grid">
-    <div class="media-card">
-        <div class="icon">🎬</div>
-        <h3>Jupiter TV</h3>
-        <p data-i18n="mediaType">Server</p>
-        <a href="http://10.99.99.2/" target="_blank" class="btn-outline">Open</a>
-    </div>
-    <div class="media-card">
-        <div class="icon">📥</div>
-        <h3>Sam Online FTP</h3>
-        <p data-i18n="mediaType">FTP</p>
-        <a href="http://172.16.50.4/" target="_blank" class="btn-outline">Open</a>
-    </div>
-    <div class="media-card">
-        <div class="icon">⚡</div>
-        <h3>Circle FTP</h3>
-        <p data-i18n="mediaType">FTP</p>
-        <a href="http://circleftp.net/" target="_blank" class="btn-outline">Open</a>
-    </div>
-    <div class="media-card">
-        <div class="icon">🧲</div>
-        <h3>TorrentBD</h3>
-        <p data-i18n="mediaTypeTorrent">Torrent</p>
-        <a href="https://www.torrentbd.com/" target="_blank" class="btn-outline">Open</a>
-    </div>
-</div>
-</div>
-</section>
-
 <!-- FAQ -->
 <section class="section" id="faq" style="background:var(--bg)">
 <div class="container">
@@ -623,7 +581,6 @@ footer a:hover{color:var(--accent)}
 <div class="contact-item"><div class="ic">🛠️</div><div><h4 data-i18n="maint">Maintenance</h4><p>01944443841-2</p></div></div>
 <div class="contact-item"><div class="ic">✉️</div><div><h4 data-i18n="email">Email</h4><p><a href="mailto:support@jupiterbd.net">support@jupiterbd.net</a></p></div></div>
 <div class="contact-item"><div class="ic">📍</div><div><h4 data-i18n="addr">Address</h4><p>Abdul Hakim Road, Mirhajirbag, Jatrabari, Dhaka</p></div></div>
-<!-- UPDATED FACEBOOK LINK -->
 <div class="contact-item"><div class="ic">📘</div><div><h4>Facebook</h4><p><a href="https://www.facebook.com/jupiterwifi" target="_blank">/jupiterwifi</a></p></div></div>
 </div>
 <div class="contact-form">
@@ -651,7 +608,6 @@ footer a:hover{color:var(--accent)}
     <img src="logo.png" alt="Jupiter Online Services" style="height: 65px; width: auto; background:#fff; padding:8px 12px; border-radius:10px; display:inline-block; object-fit:contain;">
 </div>
 <p style="font-size:13.5px;line-height:1.7" data-i18n="footerAbout">Reliable broadband for homes and businesses in Dhaka. Fast speed. Fair price. Local support.</p>
-<!-- UPDATED FACEBOOK LINK -->
 <div class="socials"><a href="https://www.facebook.com/jupiterwifi" target="_blank">f</a></div>
 </div>
 <div><h4 data-i18n="quick">Quick Links</h4><ul><li><a href="#home" data-i18n="home">Home</a></li><li><a href="#offers" data-i18n="offers">Offers</a></li><li><a href="#packages" data-i18n="pkgs">Packages</a></li><li><a href="#referral" data-i18n="referralNav">Refer & Earn</a></li><li><a href="#bill" data-i18n="bill">Pay Bill</a></li><li><a href="#contact" data-i18n="contact">Contact</a></li></ul></div>
